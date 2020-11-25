@@ -1,0 +1,5 @@
+Session C:\Users\macayla\Desktop\Macayla_CA2\WT_3chambers\Amigo2_3chamber\tint
+Room room 1
+Tracking red LED
+Tetrode 6
+Unit 1

@@ -1,0 +1,1 @@
+Session(s)	Tetrode	Unit	Field	Field X	Field Y	Avg. rate session	Peak rate session	Field size (cm^2)	Avg. rate field	Peak rate field	Bursting (%)	Sparseness	Information	Selectivity	Z coherence
