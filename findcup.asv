@@ -1,0 +1,39 @@
+function [xc,yc]=findcup(posx,posy)
+
+figure(1)
+plot(posx,posy,'k')
+hold on
+[xcup,ycup]=pol2cart([1:360],(ones(1,360)*5));
+plot(xcup+4,ycup+max(posy)/2,'go')
+plot(4,max(posy)/2,'rp')
+axis([-40 40 -25 25]);
+
+   cupQ=0;
+    %only do this once per animal, then just define xc yc for faster analysis
+    while cupQ==0
+        cupQ=input('is the cup centered? 1 for yes, 0 for no');
+        
+        if cupQ==0
+            xc=input('what is the x value of the cup center?');
+            yc=input('what is the y value of the cup center?');
+            [ang,rho]=cart2pol(posx-xc,posy-yc);
+            close(gcf)
+            
+            figure
+            
+            plot(posx,posy)
+            
+            %title([initials,'imported.mat'])
+            hold on
+            [xcup,ycup]=pol2cart([1:360],(ones(1,360)*5));
+            
+            plot(xcup+xc,ycup+yc,'go')
+            plot(xc,yc,'rp')
+            
+        else
+            
+            [ang,rho]=cart2pol(posx-4,posy-max(posy)/2);
+            
+        end
+    end
+

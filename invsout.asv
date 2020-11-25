@@ -1,0 +1,31 @@
+for hh=1:yy(1)
+    cd(animalIDs(hh,1:end))
+list_cells=num2str(ls('TT*unit*'));
+
+
+sessions={'hab','cups','fam1', 'nov', 'fam2'};
+    for j=1:length(list_cells)
+        cd(list_cells(j,1:end))
+        load('Split')
+        for k=1:length(sessions)
+        thisSession=sessions(k);
+        thisSession=cellstr(thisSession); 
+        thisSession=char(thisSession);
+        cd(thisSession)
+        post=eval(strcat('Split.',thisSession,'.post'));
+        load('leftCup.mat');
+        if isempty(leftCup{4})
+            In_v_Out(j,k)=NaN;
+        else
+        In(j,k)=leftCup{7}/(length(leftCup{4})/30);
+        Out(j,k)=leftCup{8}/(length(post)-length(leftCup{4})/30);
+        end
+        cd ..
+        end
+        cd ..
+        FRs{hh}=frL_norm;
+        
+    end
+    clearvars('frL_norm', 'frL','evs_matrix')
+    cd ..
+end
