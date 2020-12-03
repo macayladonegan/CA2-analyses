@@ -1,3 +1,5 @@
+Code for analyzing activity during social tasks, and some spatial coding. If you have any questions please email me at macayladonegan@gmail.com
+
 DISCLAIMER:
 
 The author of this Matlab File Exchange submission has not created any of the colormaps.
